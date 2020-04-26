@@ -11,7 +11,7 @@ const BaseFooter = () => {
               href="https://www.creative-tim.com"
               className="font-weight-bold ml-1"
             >
-              Infordas Ghana Limited
+              Covid-19-Tracker
             </a>
           </div>
         </div>
@@ -19,7 +19,7 @@ const BaseFooter = () => {
           <ul className="nav nav-footer justify-content-center justify-content-lg-end">
             <li className="nav-item">
               <a href="https://www.creative-tim.com" className="nav-link">
-                Creative Tim
+                Powered by Infordas Ghana Limited
               </a>
             </li>
             <li className="nav-item">

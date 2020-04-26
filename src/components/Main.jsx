@@ -1,8 +1,8 @@
 import React from "react";
 import BaseFooter from "./Footer/BaseFooter";
-import StatsCard from "./Stats/StatsCard";
-import ListCountry from "./ListCountry/ListCountry";
 import Graphs from "./Graphs/Graphs";
+import StatsView from "../view/StatsView";
+import ListCountryView from "../view/ListCountryView";
 
 const Main = () => {
   return (
@@ -22,25 +22,7 @@ const Main = () => {
               </div>
             </div>
             {/* Card stats */}
-            <div className="row">
-              <StatsCard
-                title="Infected"
-                icon="ni ni-atom"
-                gradient="icon icon-shape bg-gradient-red text-white rounded-circle shadow"
-              />
-
-              <StatsCard
-                title="Recovered"
-                icon="ni ni-chart-pie-35"
-                gradient="icon icon-shape bg-gradient-orange text-white rounded-circle shadow"
-              />
-
-              <StatsCard
-                title="Deaths"
-                icon="ni ni-ambulance"
-                gradient="icon icon-shape bg-gradient-blue text-white rounded-circle shadow"
-              />
-            </div>
+            <StatsView />
           </div>
         </div>
       </div>
@@ -51,7 +33,7 @@ const Main = () => {
             <Graphs />
           </div>
           <div className="col-xl-4">
-            <ListCountry />
+            <ListCountryView />
           </div>
         </div>
         {/* Footer */}

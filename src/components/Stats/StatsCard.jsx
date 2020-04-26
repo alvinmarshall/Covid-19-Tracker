@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import CountUp from "react-countup";
 
 const StatsCard = ({ count, icon, gradient, title }) => {
   return (
@@ -12,7 +13,9 @@ const StatsCard = ({ count, icon, gradient, title }) => {
               <h5 className="card-title text-uppercase text-muted mb-0">
                 {title}
               </h5>
-              <span className="h2 font-weight-bold mb-0">{count}</span>
+              <span className="h2 font-weight-bold mb-0">
+                <CountUp start={0} end={count} duration={2.5} separator="," />
+              </span>
             </div>
             <div className="col-auto">
               <div className={gradient}>
@@ -34,13 +37,13 @@ const StatsCard = ({ count, icon, gradient, title }) => {
 
 StatsCard.propTypes = {
   title: PropTypes.string,
-  count: PropTypes.string,
+  count: PropTypes.number,
   icon: PropTypes.string,
   gradient: PropTypes.string,
 };
 
 StatsCard.defaultProps = {
-  count: "0",
+  count: 0,
   icon: "ni ni-chart-pie-35",
   gradient:
     "icon icon-shape bg-gradient-orange text-white rounded-circle shadow",

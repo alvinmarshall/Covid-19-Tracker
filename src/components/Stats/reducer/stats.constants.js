@@ -1,0 +1,1 @@
+export const GET_TOTAL_COUNT = "GET_TOTAL_COUNT";

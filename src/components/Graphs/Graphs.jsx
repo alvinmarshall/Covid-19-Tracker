@@ -7,7 +7,7 @@ const Graphs = () => {
         <div className="row align-items-center">
           <div className="col">
             <h6 className="text-light text-uppercase ls-1 mb-1">Overview</h6>
-            <h5 className="h3 text-white mb-0">Sales value</h5>
+            <h5 className="h3 text-white mb-0">Graph</h5>
           </div>
           <div className="col">
             <ul className="nav nav-pills justify-content-end">
@@ -17,14 +17,14 @@ const Graphs = () => {
                   className="nav-link py-2 px-3 active"
                   data-toggle="tab"
                 >
-                  <span className="d-none d-md-block">Month</span>
-                  <span className="d-md-none">M</span>
+                  <span className="d-none d-md-block">Global</span>
+                  <span className="d-md-none">G</span>
                 </a>
               </li>
               <li className="nav-item">
                 <a href="##" className="nav-link py-2 px-3" data-toggle="tab">
-                  <span className="d-none d-md-block">Week</span>
-                  <span className="d-md-none">W</span>
+                  <span className="d-none d-md-block">Daily</span>
+                  <span className="d-md-none">D</span>
                 </a>
               </li>
             </ul>
