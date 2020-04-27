@@ -2,6 +2,9 @@
 
 A react application to show case the covid-19 pandemic results
 
+# Live Preview
+https://bik-krlvn.github.io/Covid-19-Tracker/
+
 ## Message
 > let help fight the corona virus.
 
