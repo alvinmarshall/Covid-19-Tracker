@@ -46,8 +46,8 @@ const ListCountry = ({ countries, handleClickAction }) => {
           ))}
       </div>
 
-      <div className="card-footer py-4">
-        <nav aria-label="...">
+      <div className="card-footer">
+        <nav>
           <ul className="pagination justify-content-end mb-0">
             <li
               className={`page-item ${currentPage > 1 ? "enable" : "disabled"}`}

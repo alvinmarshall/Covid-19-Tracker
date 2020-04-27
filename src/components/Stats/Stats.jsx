@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import StatsCard from "./StatsCard";
 
-const Stats = ({ confirmed, recovered, deaths }) => {
+const Stats = ({ confirmed, recovered, deaths, lastUpdate }) => {
   return (
     <div className="row">
       <StatsCard
@@ -10,6 +10,7 @@ const Stats = ({ confirmed, recovered, deaths }) => {
         icon="ni ni-atom"
         count={(confirmed && confirmed.value) || 0}
         gradient="icon icon-shape bg-gradient-red text-white rounded-circle shadow"
+        date={lastUpdate}
       />
 
       <StatsCard
@@ -17,6 +18,7 @@ const Stats = ({ confirmed, recovered, deaths }) => {
         icon="ni ni-chart-pie-35"
         count={(recovered && recovered.value) || 0}
         gradient="icon icon-shape bg-gradient-orange text-white rounded-circle shadow"
+        date={lastUpdate}
       />
 
       <StatsCard
@@ -24,6 +26,7 @@ const Stats = ({ confirmed, recovered, deaths }) => {
         icon="ni ni-ambulance"
         count={(deaths && deaths.value) || 0}
         gradient="icon icon-shape bg-gradient-blue text-white rounded-circle shadow"
+        date={lastUpdate}
       />
     </div>
   );
