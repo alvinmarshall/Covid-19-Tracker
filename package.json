@@ -1,7 +1,16 @@
 {
   "name": "covid-19-tracker",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://Bik-Krlvn.github.io/Covid-19-Tracker",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -19,11 +28,9 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "gh-pages": "^2.2.0",
+    "redux-devtools-extension": "^2.13.8"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.8"
   }
 }

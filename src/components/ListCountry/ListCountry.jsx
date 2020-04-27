@@ -39,6 +39,7 @@ const ListCountry = ({ countries, handleClickAction }) => {
                     <Typeahead
                       onKeyDown={handleFormSubmit}
                       id="country_opt"
+                      placeholder="search country"
                       labelKey={(option) => `${option.name}`}
                       options={countries}
                       onChange={(selected) => {
