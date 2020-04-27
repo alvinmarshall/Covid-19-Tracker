@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import ReduxToastr from "react-redux-toastr";
 import Main from "../../components/Main";
 import { configureStore } from "../store/configStore";
-
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
 export const App = () => {
   const store = configureStore();
   return (

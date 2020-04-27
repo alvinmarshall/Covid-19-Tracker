@@ -4,6 +4,7 @@ import StatsView from "../view/StatsView";
 import ListCountryView from "../view/ListCountryView";
 import GraphView from "../view/GraphView";
 import useCurrentCountry from "../hooks/useCurrentCountry";
+import PreventiveView from "./preventive/PreventiveView";
 
 const Main = () => {
   const { currentCountry } = useCurrentCountry();
@@ -40,6 +41,8 @@ const Main = () => {
             <ListCountryView />
           </div>
         </div>
+
+        <PreventiveView />
         {/* Footer */}
         <BaseFooter />
       </div>

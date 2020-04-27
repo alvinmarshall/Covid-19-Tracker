@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Graph from "./Graph";
 
 const GraphLayout = ({ items, selectedCountry }) => {
+  const Country = selectedCountry.currentCountry;
+  const isGlobalActive = Country ? "" : "active";
+  const isCountryActive = isGlobalActive === "active" ? "" : "active";
   return (
     <div className="card bg-default">
       <div className="card-header bg-transparent">
@@ -16,7 +19,7 @@ const GraphLayout = ({ items, selectedCountry }) => {
               <li className="nav-item mr-2 mr-md-0">
                 <a
                   href="##"
-                  className="nav-link py-2 px-3 active"
+                  className={`nav-link py-2 px-3 ${isGlobalActive}`}
                   data-toggle="tab"
                 >
                   <span className="d-none d-md-block">Global</span>
@@ -24,9 +27,15 @@ const GraphLayout = ({ items, selectedCountry }) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="##" className="nav-link py-2 px-3" data-toggle="tab">
-                  <span className="d-none d-md-block">Daily</span>
-                  <span className="d-md-none">D</span>
+                <a
+                  href="##"
+                  className={`nav-link py-2 px-3 ${isCountryActive}`}
+                  data-toggle="tab"
+                >
+                  <span className="d-none d-md-block">
+                    {Country === null ? "Country" : Country}
+                  </span>
+                  <span className="d-md-none">C</span>
                 </a>
               </li>
             </ul>

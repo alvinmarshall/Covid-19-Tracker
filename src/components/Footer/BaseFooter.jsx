@@ -18,22 +18,22 @@ const BaseFooter = () => {
         <div className="col-lg-6">
           <ul className="nav nav-footer justify-content-center justify-content-lg-end">
             <li className="nav-item">
-              <a href="https://www.creative-tim.com" className="nav-link">
+              <a href="#!" className="nav-link">
                 Powered by Infordas Ghana Limited
               </a>
             </li>
             <li className="nav-item">
               <a
-                href="https://www.creative-tim.com/presentation"
+                href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html"
                 className="nav-link"
               >
-                About Us
+                Sources
               </a>
             </li>
-            
+
             <li className="nav-item">
               <a
-                href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
+                href="https://github.com/Bik-Krlvn/Covid-19-Tracker/blob/develop/LICENSE"
                 className="nav-link"
               >
                 MIT License
