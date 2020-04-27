@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
+import Graph from "./Graph";
 
-const Graphs = () => {
+const GraphLayout = ({ items }) => {
   return (
     <div className="card bg-default">
       <div className="card-header bg-transparent">
@@ -33,13 +35,13 @@ const Graphs = () => {
       </div>
       <div className="card-body">
         {/* Chart */}
-        <div className="chart">
-          {/* Chart wrapper */}
-          <canvas id="chart-sales-dark" className="chart-canvas" />
-        </div>
+        <Graph items={items} />
       </div>
     </div>
   );
 };
 
-export default Graphs;
+GraphLayout.propTypes = {
+  items: PropTypes.array,
+};
+export default GraphLayout;

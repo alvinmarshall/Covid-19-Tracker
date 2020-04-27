@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CountUp from "react-countup";
 
-const StatsCard = ({ count, icon, gradient, title }) => {
+const StatsCard = ({ count, icon, gradient, title, date }) => {
   return (
     <div className="col-xl-4 col-md-6">
       <div className="card card-stats">
@@ -25,9 +25,9 @@ const StatsCard = ({ count, icon, gradient, title }) => {
           </div>
           <p className="mt-3 mb-0 text-sm">
             <span className="text-success mr-2">
-              <i className="fa fa-arrow-up" /> 3.48%
+              <i className="fa fa-arrow-up" /> 
             </span>
-            <span className="text-nowrap">Since last month</span>
+            <span className="text-nowrap">Since {new Date(date).toDateString()}</span>
           </p>
         </div>
       </div>
@@ -40,6 +40,7 @@ StatsCard.propTypes = {
   count: PropTypes.number,
   icon: PropTypes.string,
   gradient: PropTypes.string,
+  date: PropTypes.string,
 };
 
 StatsCard.defaultProps = {

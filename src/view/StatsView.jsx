@@ -9,7 +9,7 @@ const StatsView = () => {
   const confirmed = useSelector((state) => state.stats.confirmed);
   const recovered = useSelector((state) => state.stats.recovered);
   const deaths = useSelector((state) => state.stats.deaths);
-
+  const lastUpdate = useSelector((state) => state.stats.lastUpdate);
 
   useEffect(() => {
     const handleTotalCounts = () => {
@@ -17,7 +17,14 @@ const StatsView = () => {
     };
     handleTotalCounts();
   }, [dispatch]);
-  return <Stats confirmed={confirmed} recovered={recovered} deaths={deaths} />;
+  return (
+    <Stats
+      confirmed={confirmed}
+      recovered={recovered}
+      deaths={deaths}
+      lastUpdate={lastUpdate}
+    />
+  );
 };
 
 export default StatsView;

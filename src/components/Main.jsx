@@ -1,8 +1,8 @@
 import React from "react";
 import BaseFooter from "./Footer/BaseFooter";
-import Graphs from "./Graphs/Graphs";
 import StatsView from "../view/StatsView";
 import ListCountryView from "../view/ListCountryView";
+import GraphView from "../view/GraphView";
 
 const Main = () => {
   return (
@@ -30,7 +30,7 @@ const Main = () => {
       <div className="container-fluid mt--6">
         <div className="row">
           <div className="col-xl-8">
-            <Graphs />
+            <GraphView />
           </div>
           <div className="col-xl-4">
             <ListCountryView />

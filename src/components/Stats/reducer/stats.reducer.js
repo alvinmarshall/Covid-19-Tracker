@@ -5,6 +5,7 @@ const initialState = {
   confirmed: null,
   recovered: null,
   deaths: null,
+  lastUpdate: null,
 };
 
 const getTotalCount = (state, payload) => {

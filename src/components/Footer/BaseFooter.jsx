@@ -30,11 +30,7 @@ const BaseFooter = () => {
                 About Us
               </a>
             </li>
-            <li className="nav-item">
-              <a href="http://blog.creative-tim.com" className="nav-link">
-                Blog
-              </a>
-            </li>
+            
             <li className="nav-item">
               <a
                 href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
