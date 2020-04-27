@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Typeahead } from "react-bootstrap-typeahead";
 import ListContent from "./ListContent";
 import usePagination from "../../hooks/usePagination";
+import useSearchCountry from "../../hooks/useSearchCountry";
 
 const ListCountry = ({ countries, handleClickAction }) => {
   const { currentData, next, currentPage, prev } = usePagination(countries, 5);
-
+  const [searchValue, setSearchValue] = useState("");
+  const { onSearchCountry } = useSearchCountry();
   const newCountry = currentData();
+
+  const handleFormSubmit = (evt) => {
+    if (evt.keyCode === 13) {
+      if (searchValue.length) {
+        const value = searchValue[0].name;
+        onSearchCountry(value);
+      }
+    }
+  };
 
   return (
     <div className="card">
@@ -23,11 +35,18 @@ const ListCountry = ({ countries, handleClickAction }) => {
                       <span className="fas fa-search" />
                     </div>
                   </div>
-                  <input
-                    type="search"
-                    className="form-control"
-                    placeholder="Search"
-                  />
+                  <div className="form-control">
+                    <Typeahead
+                      onKeyDown={handleFormSubmit}
+                      id="country_opt"
+                      labelKey={(option) => `${option.name}`}
+                      options={countries}
+                      onChange={(selected) => {
+                        setSearchValue((searchValue) => selected);
+                      }}
+                      selected={searchValue}
+                    />
+                  </div>
                 </div>
               </div>
             </form>
