@@ -1,7 +1,7 @@
 {
   "name": "covid-19-tracker",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "http://Bik-Krlvn.github.io/Covid-19-Tracker",
   "scripts": {
     "start": "react-scripts start",
