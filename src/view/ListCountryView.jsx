@@ -1,25 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCountriesAction } from "../components/ListCountry/reducer/countries.action";
+import React from "react";
 import ListCountry from "../components/ListCountry/ListCountry";
+import useCountries from "../hooks/useCountries";
 
 const ListCountryView = () => {
-  const dispatch = useDispatch();
-  const countries = useSelector((state) => state.country.countries);
+  const { countries, onCountryClick } = useCountries();
 
-  const handleClickAction = (payload) => {
-    console.log("payload", payload);
-  };
-  useEffect(() => {
-    const loadCountries = () => dispatch(getCountriesAction());
-    loadCountries();
-  }, [dispatch]);
   return (
     <div>
-      <ListCountry
-        countries={countries}
-        handleClickAction={handleClickAction}
-      />
+      <ListCountry countries={countries} handleClickAction={onCountryClick}  />
     </div>
   );
 };

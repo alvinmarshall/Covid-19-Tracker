@@ -1,22 +1,10 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getTotalCountAction } from "../components/Stats/reducer/stats.action";
+import React from "react";
 import Stats from "../components/Stats/Stats";
+import useTotalCount from "../hooks/useTotalCount";
 
 const StatsView = () => {
-  const dispatch = useDispatch();
+  const { confirmed, recovered, deaths, lastUpdate } = useTotalCount();
 
-  const confirmed = useSelector((state) => state.stats.confirmed);
-  const recovered = useSelector((state) => state.stats.recovered);
-  const deaths = useSelector((state) => state.stats.deaths);
-  const lastUpdate = useSelector((state) => state.stats.lastUpdate);
-
-  useEffect(() => {
-    const handleTotalCounts = () => {
-      dispatch(getTotalCountAction());
-    };
-    handleTotalCounts();
-  }, [dispatch]);
   return (
     <Stats
       confirmed={confirmed}

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Graph from "./Graph";
 
-const GraphLayout = ({ items }) => {
+const GraphLayout = ({ items, selectedCountry }) => {
   return (
     <div className="card bg-default">
       <div className="card-header bg-transparent">
@@ -35,7 +35,7 @@ const GraphLayout = ({ items }) => {
       </div>
       <div className="card-body">
         {/* Chart */}
-        <Graph items={items} />
+        <Graph items={items} subItem={selectedCountry} />
       </div>
     </div>
   );
@@ -43,5 +43,6 @@ const GraphLayout = ({ items }) => {
 
 GraphLayout.propTypes = {
   items: PropTypes.array,
+  selectedCountry: PropTypes.object,
 };
 export default GraphLayout;

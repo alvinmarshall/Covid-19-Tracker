@@ -1,18 +1,19 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getGlobalTotalAction } from "../components/Graphs/reducer/graph.action";
+import React from "react";
 import GraphLayout from "../components/Graphs/GraphLayout";
+import useGlobalTotal from "../hooks/useGlobalTotal";
+import useCurrentCountry from "../hooks/useCurrentCountry";
 
 const GraphView = () => {
-  const dispatch = useDispatch();
-  const global = useSelector((state) => state.graph.global);
+  const { globalData } = useGlobalTotal();
+  const { currentCountry, confirmed, deaths, recovered } = useCurrentCountry();
+  const selectedCountry = {
+    currentCountry,
+    confirmed,
+    deaths,
+    recovered,
+  };
 
-  useEffect(() => {
-    const loadDaily = () => dispatch(getGlobalTotalAction());
-    loadDaily();
-  }, [dispatch]);
-
-  return <GraphLayout items={global} />;
+  return <GraphLayout items={globalData} selectedCountry={selectedCountry} />;
 };
 
 export default GraphView;
