@@ -19,7 +19,7 @@ const ListCountry = ({ countries, handleClickAction }) => {
   const handleFormSubmit = (evt) => {
     if (evt.keyCode === enterKeyCode) {
       if (searchValue.length) {
-        const value = searchValue[0].name === "Global" ? null : searchValue[0];
+        const value = searchValue[0].name === "Global" ? null : searchValue[0].name;
         onSearchCountry(value);
       }
     }
