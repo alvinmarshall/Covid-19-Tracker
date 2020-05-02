@@ -6,15 +6,20 @@ import usePagination from "../../hooks/usePagination";
 import useSearchCountry from "../../hooks/useSearchCountry";
 
 const ListCountry = ({ countries, handleClickAction }) => {
-  const { currentData, next, currentPage, prev } = usePagination(countries, 5);
+  const { currentData, next, currentPage, prev, jump } = usePagination(
+    countries,
+    5
+  );
   const [searchValue, setSearchValue] = useState("");
   const { onSearchCountry } = useSearchCountry();
   const newCountry = currentData();
+  const pageInterval = [1, 2, 3, 4, 5, 6, 7];
+  const enterKeyCode = 13;
 
   const handleFormSubmit = (evt) => {
-    if (evt.keyCode === 13) {
+    if (evt.keyCode === enterKeyCode) {
       if (searchValue.length) {
-        const value = searchValue[0].name;
+        const value = searchValue[0].name === "Global" ? null : searchValue[0];
         onSearchCountry(value);
       }
     }
@@ -82,11 +87,17 @@ const ListCountry = ({ countries, handleClickAction }) => {
                 <span className="sr-only">Previous</span>
               </a>
             </li>
-            <li className="page-item active">
-              <a id={1} className="page-link" href="#!">
-                {currentPage}
-              </a>
-            </li>
+
+            {pageInterval.map((page, i) => (
+              <li
+                className={`page-item ${currentPage === page ? "active" : ""}`}
+                key={i}
+              >
+                <a className="page-link" href="#!" onClick={() => jump(page)}>
+                  {page}
+                </a>
+              </li>
+            ))}
 
             <li className="page-item">
               <a className="page-link" href="#!" onClick={() => next()}>
