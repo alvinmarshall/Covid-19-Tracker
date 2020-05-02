@@ -14,11 +14,12 @@ const ListCountry = ({ countries, handleClickAction }) => {
   const { onSearchCountry } = useSearchCountry();
   const newCountry = currentData();
   const pageInterval = [1, 2, 3, 4, 5, 6, 7];
+  const enterKeyCode = 13;
 
   const handleFormSubmit = (evt) => {
-    if (evt.keyCode === 13) {
+    if (evt.keyCode === enterKeyCode) {
       if (searchValue.length) {
-        const value = searchValue[0].name;
+        const value = searchValue[0].name === "Global" ? null : searchValue[0];
         onSearchCountry(value);
       }
     }

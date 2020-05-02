@@ -20,7 +20,7 @@ const ListContent = ({ country, OnCountryClick }) => {
           </div>
           <div className="col-auto">
             <button type="button" className="btn btn-sm btn-primary">
-              View
+              Plot
             </button>
           </div>
         </div>
