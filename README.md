@@ -6,7 +6,7 @@ A react application to show case the covid-19 pandemic results
 https://bik-krlvn.github.io/Covid-19-Tracker/
 
 ## Message
-> let help fight the corona virus.
+> let's help fight the corona virus.
 
 # Libraries
 
