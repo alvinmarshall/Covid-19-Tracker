@@ -13,7 +13,7 @@ const ListCountry = ({ countries, handleClickAction }) => {
   const [searchValue, setSearchValue] = useState("");
   const { onSearchCountry } = useSearchCountry();
   const newCountry = currentData();
-  const pageInterval = [1, 2, 3, 4, 5, 6, 7];
+  const pageInterval = [1, 2, 3, 4, 5, 6];
   const enterKeyCode = 13;
 
   const handleFormSubmit = (evt) => {
